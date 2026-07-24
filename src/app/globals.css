@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  @apply bg-court-950 font-sans text-white antialiased;
+  /* Warm, layered depth: amber glow up top, a whisper of orange + violet below. */
+  background-image:
+    radial-gradient(120% 55% at 20% -15%, rgba(245, 165, 36, 0.16), transparent 55%),
+    radial-gradient(120% 55% at 90% -10%, rgba(251, 146, 60, 0.08), transparent 55%),
+    radial-gradient(120% 45% at 50% 118%, rgba(124, 108, 255, 0.08), transparent 60%);
+  background-attachment: fixed;
+}
+
+button,
+[role="button"],
+a {
+  touch-action: manipulation;
+}
+
+/* Focus visibility for keyboard nav (a11y §1). */
+:focus-visible {
+  outline: 2px solid theme("colors.amber.400");
+  outline-offset: 2px;
+}
+
+@layer components {
+  /* Elevated surface used across cards/inputs. */
+  .surface {
+    border-radius: theme("borderRadius.card");
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)),
+      linear-gradient(rgba(20, 20, 24, 0.92), rgba(20, 20, 24, 0.92));
+    box-shadow: theme("boxShadow.card");
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+  /* Press feedback for tappable elements (micro-interactions). */
+  .pressable {
+    transition: transform 0.15s ease;
+  }
+  .pressable:active {
+    transform: scale(0.97);
+  }
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: rgba(255, 255, 255, 0.4);
+  }
+}
+
+/* Range sliders → amber thumb, gym-legible. */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  border-radius: 9999px;
+  background: linear-gradient(theme("colors.court.700"), theme("colors.court.700"));
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 9999px;
+  background: theme("colors.amber.500");
+  cursor: pointer;
+  border: 4px solid theme("colors.court.900");
+  box-shadow: 0 4px 14px rgba(245, 165, 36, 0.4);
+  transition: transform 0.12s ease;
+}
+input[type="range"]::-webkit-slider-thumb:active {
+  transform: scale(1.12);
+}
+input[type="range"]::-moz-range-thumb {
+  width: 30px;
+  height: 30px;
+  border-radius: 9999px;
+  background: theme("colors.amber.500");
+  cursor: pointer;
+  border: 4px solid theme("colors.court.900");
+}
+
+/* Respect reduced-motion (a11y §7). */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

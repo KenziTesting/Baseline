@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Baseline">
+  <rect width="512" height="512" fill="#0b0b0d"/>
+  <circle cx="256" cy="256" r="154" fill="#f4a52b"/>
+  <g fill="none" stroke="#0b0b0d" stroke-width="21" stroke-linecap="round">
+    <line x1="256" y1="102" x2="256" y2="410"/>
+    <line x1="102" y1="256" x2="410" y2="256"/>
+    <path d="M 256 102 A 210 210 0 0 0 256 410"/>
+    <path d="M 256 102 A 210 210 0 0 1 256 410"/>
+  </g>
+</svg>
