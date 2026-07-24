@@ -17,7 +17,7 @@ DNA-vector model, the archetype library, and archetype matching + gap reports.
 | 5 | Progress analytics + charts | ✅ |
 | 6 | Shoe Finder | ✅ |
 | 7 | Coach chat (Anthropic) | ✅ |
-| 8 | Polish, notifications, offline, tests | ⏳ |
+| 8 | Polish, offline/PWA (installable, service worker, offline shell), tests | ✅ offline/PWA; notifications ⏳ |
 
 Expansion modules: DNA/fatigue engine, 2D body map, THE WEEK (mentality + paywall),
 F9 soreness calibration + asymmetry — all ✅. 3D fatigue map (F7/F8) pending a
